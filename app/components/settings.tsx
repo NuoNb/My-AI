@@ -334,6 +334,13 @@ export function Settings() {
       <div className={styles["settings"]}>
         
           <List>
+            <ListItem
+              title={"公告"}
+              subTitle={"你好"}
+            >
+            </ListItem>
+          </List>
+          <List>
           {enabledAccessControl ? (
             <ListItem
               title={Locale.Settings.AccessCode.Title}

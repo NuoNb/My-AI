@@ -141,6 +141,12 @@ const cn = {
       SubTitle: "当未压缩的历史消息超过该值时，将进行压缩",
     },
    
+     Token: {
+      /*Title: "API Key",
+      SubTitle: "使用自己的 Key 可绕过密码访问限制",
+      Placeholder: "OpenAI API Key",*/
+    },
+    
     Usage: {
       Title: "余额查询",
       SubTitle(used: any, total: any) {

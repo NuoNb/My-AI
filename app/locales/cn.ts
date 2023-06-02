@@ -4,7 +4,7 @@ const cn = {
   WIP: "该功能仍在开发中……",
   Error: {
     Unauthorized:
-      "你还未授权，请前往[设置](/#/settings)页输入正确的授权码，如果你没有授权码请联系WX：QNCYW_NY，或者填入你自己的 OpenAI API Key。",
+      "你还未授权，请前往[设置](/#/settings)页输入正确的授权码，如果你没有授权码请进群获取：545385080，或者填入你自己的 OpenAI API Key。",
   },
   ChatItem: {
     ChatItemCount: (count: number) => `${count} 条对话`,

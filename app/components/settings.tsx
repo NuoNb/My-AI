@@ -335,10 +335,10 @@ export function Settings() {
       </div>
       <div className={styles["settings"]}>
         
-          <List sytle = "center">
+          <List>
             <ListItem 
                title={"公告"}
-               subTitle={""}
+               subTitle={"非常感谢您选择使用 Zhang AI，我们是一款基于 GPT-3.5 模型的虚拟助手。通过无需登录、没有广告且可以在国内网络直接访问的服务，我们致力于为用户提供高效便捷的解决方案。Zhang AI 可以帮助您解决各种问题，包括但不限于语言翻译、知识查询和代码编写等任务。我们的服务完全免费，并且没有任何使用限制，因此您可以随时向我们寻求帮助。我们相信，借助 Zhang AI 的强大功能，您将能够更加轻松地完成工作和学习。再次感谢您选择 Zhang AI！"}
               >
             </ListItem>
           </List>

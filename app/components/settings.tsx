@@ -335,10 +335,7 @@ export function Settings() {
         
           <List>
             <ListItem
-               <div style={{ textAlign: 'center', fontSize: '1.5em', fontWeight: 'bold' }}>
-                   公告
-                  
-               </div>
+               
             >
             </ListItem>
           </List>

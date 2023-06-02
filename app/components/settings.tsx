@@ -333,13 +333,22 @@ export function Settings() {
       </div>
       <div className={styles["settings"]}>
         
+        <style>
+             .announcement {
+             text-align: center;
+             font-size: 1.5em;
+             font-weight: bold;
+             }
+       </style>
+        
           <List>
             <ListItem
-              title={"公告"}
-              subTitle={"你好"}
+              <div class="announcement">公告</div>
+              <div>你好</div>
             >
             </ListItem>
           </List>
+        
           <List>
           {enabledAccessControl ? (
             <ListItem

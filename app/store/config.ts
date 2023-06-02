@@ -11,9 +11,9 @@ export enum SubmitKey {
 }
 
 export enum Theme {
-  Auto = "auto",
-  Dark = "dark",
-  Light = "light",
+  Auto = "跟随系统",
+  Dark = "夜间",
+  Light = "白天",
 }
 
 export const DEFAULT_CONFIG = {
@@ -49,7 +49,7 @@ export type ChatConfigStore = ChatConfig & {
 
 export type ModelConfig = ChatConfig["modelConfig"];
 
-const ENABLE_GPT4 = true;
+const ENABLE_GPT4 = false;
 
 export const ALL_MODELS = [
   {

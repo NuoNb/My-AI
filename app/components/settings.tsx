@@ -332,6 +332,51 @@ export function Settings() {
         </div>
       </div>
       <div className={styles["settings"]}>
+        
+          <List>
+          {enabledAccessControl ? (
+            <ListItem
+              title={Locale.Settings.AccessCode.Title}
+              subTitle={Locale.Settings.AccessCode.SubTitle}
+            >
+              <PasswordInput
+                value={accessStore.accessCode}
+                type="text"
+                placeholder={Locale.Settings.AccessCode.Placeholder}
+                onChange={(e) => {
+                  accessStore.updateCode(e.currentTarget.value);
+                }}
+              />
+            </ListItem>
+          ) : (
+            <></>
+          )}
+          
+          <ListItem
+            title={Locale.Settings.Usage.Title}
+            subTitle={
+              showUsage
+                ? loadingUsage
+                  ? Locale.Settings.Usage.IsChecking
+                  : Locale.Settings.Usage.SubTitle(
+                      usage?.used ?? "[?]",
+                      usage?.subscription ?? "[?]",
+                    )
+                : Locale.Settings.Usage.NoAccess
+            }
+          >
+            {!showUsage || loadingUsage ? (
+              <div />
+            ) : (
+              <IconButton
+                icon={<ResetIcon></ResetIcon>}
+                text={Locale.Settings.Usage.Check}
+                onClick={() => checkUsage(true)}
+              />
+            )}
+          </ListItem>
+          
+        </List>
        
         <List>
           <ListItem title={Locale.Settings.Avatar}>
@@ -357,30 +402,31 @@ export function Settings() {
           </ListItem>
           
            <ListItem
-            title={Locale.Settings.Usage.Title}
+            title={Locale.Settings.Update.Version(currentVersion ?? "unknown")}
             subTitle={
-              showUsage
-                ? loadingUsage
-                  ? Locale.Settings.Usage.IsChecking
-                  : Locale.Settings.Usage.SubTitle(
-                      usage?.used ?? "[?]",
-                      usage?.subscription ?? "[?]",
-                    )
-                : Locale.Settings.Usage.NoAccess
+              checkingUpdate
+                ? Locale.Settings.Update.IsChecking
+                : hasNewVersion
+                ? Locale.Settings.Update.FoundUpdate(remoteId ?? "ERROR")
+                : Locale.Settings.Update.IsLatest
             }
           >
-            {!showUsage || loadingUsage ? (
-              <div />
+            {checkingUpdate ? (
+              <LoadingIcon />
+            ) : hasNewVersion ? (
+              <Link href={UPDATE_URL} target="_blank" className="link">
+                {Locale.Settings.Update.GoToUpdate}
+              </Link>
             ) : (
               <IconButton
                 icon={<ResetIcon></ResetIcon>}
-                text={Locale.Settings.Usage.Check}
-                onClick={() => checkUsage(true)}
+                text={Locale.Settings.Update.CheckUpdate}
+                onClick={() => checkUpdate(true)}
               />
             )}
           </ListItem>
-      
-
+          
+           
           <ListItem title={Locale.Settings.SendKey}>
             <Select
               value={config.submitKey}
@@ -484,26 +530,7 @@ export function Settings() {
           </ListItem>
         </List>
 
-        <List>
-          {enabledAccessControl ? (
-            <ListItem
-              title={Locale.Settings.AccessCode.Title}
-              subTitle={Locale.Settings.AccessCode.SubTitle}
-            >
-              <PasswordInput
-                value={accessStore.accessCode}
-                type="text"
-                placeholder={Locale.Settings.AccessCode.Placeholder}
-                onChange={(e) => {
-                  accessStore.updateCode(e.currentTarget.value);
-                }}
-              />
-            </ListItem>
-          ) : (
-            <></>
-          )}
-          
-        </List>
+      
 
          
         <List>

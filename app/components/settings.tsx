@@ -258,6 +258,14 @@ export function Settings() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [],
   );
+  
+  const useStyles = makeStyles({
+  centered: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+});
 
   const promptStore = usePromptStore();
   const builtinCount = SearchService.count.builtin;
@@ -334,8 +342,10 @@ export function Settings() {
       <div className={styles["settings"]}>
         
           <List>
-            <ListItem
-              <h1>你好啊 </h1>
+            const classes = useStyles();
+            <ListItem className={classes.centered}
+              title={"公告"}
+              subTitle={""}
             >
             </ListItem>
           </List>

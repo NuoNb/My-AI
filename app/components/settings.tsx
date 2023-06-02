@@ -343,10 +343,10 @@ export function Settings() {
         
           <List>
             const classes = useStyles();
-            <ListItem className={classes.centered}
+            <ListItem className={classes.centered} {...props}>
               title={"公告"}
               subTitle={""}
-            >
+       
             </ListItem>
           </List>
         

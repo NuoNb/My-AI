@@ -378,7 +378,7 @@ export function Settings() {
               />
             )}
           </ListItem>
-        </List>
+        
 
 
           <ListItem

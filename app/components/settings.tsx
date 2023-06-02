@@ -259,13 +259,7 @@ export function Settings() {
     [],
   );
   
-  const useStyles = makeStyles({
-  centered: {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-});
+ 
 
   const promptStore = usePromptStore();
   const builtinCount = SearchService.count.builtin;
@@ -341,12 +335,11 @@ export function Settings() {
       </div>
       <div className={styles["settings"]}>
         
-          <List>
-            const classes = useStyles();
-            <ListItem className={classes.centered} {...props}>
-              title={"公告"}
-              subTitle={""}
-       
+          <List sytle = "center">
+            <ListItem 
+               title={"公告"}
+               subTitle={""}
+              >
             </ListItem>
           </List>
         

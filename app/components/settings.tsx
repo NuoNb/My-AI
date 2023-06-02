@@ -333,18 +333,12 @@ export function Settings() {
       </div>
       <div className={styles["settings"]}>
         
-        <style>
-             .announcement {
-             text-align: center;
-             font-size: 1.5em;
-             font-weight: bold;
-             }
-       </style>
-        
           <List>
             <ListItem
-              <div class="announcement">公告</div>
-              <div>你好</div>
+               <div style={{ textAlign: 'center', fontSize: '1.5em', fontWeight: 'bold' }}>
+                   公告
+                  
+               </div>
             >
             </ListItem>
           </List>
